@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace WebApplication1.Models
 {
@@ -11,6 +12,8 @@ namespace WebApplication1.Models
         public string? Name { get; set; }
 
         [Required]
+        [DisplayName("Display Order")]
+        [Range(1, 100, ErrorMessage = "Display Order must be between 1 and 100 only!!")]
         public int DisplayOrder { get; set; }
 
 
